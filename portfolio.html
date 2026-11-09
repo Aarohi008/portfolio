@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    color: #222;
+}
+
+
+header {
+    background: darkblue;
+    padding: 12px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 12px;
+}
+
+nav a:hover {
+    color: pink;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 25px;
+    min-height: 210px;
+}
+
+.hero h1 {
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+
+
+.hero h2 {
+    color: red;
+    font-size: 30px;
+}
+
+.hero p {
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+.hero img {
+    width: 180px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid powderblue;
+    transition: 0.4s;
+}
+
+.hero img:hover {
+    transform: scale(1.08);
+}
+
+
+section {
+    padding: 18px 25px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.about p {
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 0 15px;
+}
+
+.skill {
+    background: darkblue;
+    color: white;
+    padding: 18px;
+    text-align: center;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.skill h4 {
+    font-size: 14px;
+}
+
+.skill p {
+    font-size: 11px;
+}
+
+.skill:hover {
+    background: pink;
+    transform: translateY(-5px);
+}
+
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.project {
+    background: cornsilk;
+    width: 65%;
+    min-height: 115px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px #ddd;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.03);
+}
+
+.project h4 {
+    font-size: 14px;
+}
+
+.project p {
+    font-size: 11px;
+}
+
+/* Contact */
+.contact form {
+    background: cornsilk;
+    width: 320px;
+    max-width: 100%;
+    margin: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 2px 6px #ddd;
+}
+
+form label {
+    font-size: 11px;
+}
+
+form input,
+form textarea {
+    padding: 8px;
+    border: 1px solid red;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+form textarea {
+    height: 55px;
+    resize: vertical;
+}
+
+form button {
+    background: darkblue;
+    color: white;
+    border: none;
+    padding: 9px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: pink;
+    transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+    background: darkblue;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 11px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+}
+
+
+@media(max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project {
+        width: 90%;
+    }
+}
+
+
+@media(max-width: 480px) {
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project {
+        width: 100%;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2 class="logo">My Portfolio</h2>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <div>
+        <h1>Hi, I am</h1>
+        <h2>Full Stack Developer</h2>
+        <p>Building modern web applications with beautiful designs.</p>
+    </div>
+
+    <img src="https://tse3.mm.bing.net/th/id/OIP.0MNeEmKyX-xNAjR1I5x84QHaHa?r=0&w=512&h=512&rs=1&pid=ImgDetMain&o=7&rm=3"
+         alt="Profile Image">
+</div>
+
+<section class="about" id="about">
+    <h3>About Me</h3>
+    <p>
+        Hello! My name is Aarohi. I am a BSc hons in computer science student.who loves learning web development. I enjoy creating
+        attractive and responsive websites. I am interested in
+        technology and programming. My goal is to improve my
+        coding skills and become a successful developer.
+    </p>
+</section>
+
+
+<section id="skills">
+    <h3>My Skills</h3>
+
+    <div class="skills-container">
+        <div class="skill">
+            <h4>HTML</h4>
+            <p>Structure</p>
+        </div>
+
+        <div class="skill">
+            <h4>CSS</h4>
+            <p>Design</p>
+        </div>
+
+        <div class="skill">
+            <h4>JavaScript</h4>
+            <p>Interaction</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h3>My Projects</h3>
+
+    <div class="projects-container">
+        <div class="project">
+            <h4>Project 1</h4>
+            <p>A simple HTML & CSS website.</p>
+        </div>
+
+        <div class="project">
+            <h4>Project 2</h4>
+            <p>An attractive responsive portfolio.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="contact" id="contact">
+    <h3>Contact Me</h3>
+
+    <form onsubmit="event.preventDefault(); alert('Message submitted successfully!'); this.reset();">
+
+        <label>Name:</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Email:</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Message:</label>
+        <textarea placeholder="Write your message" required></textarea>
+
+        <button type="submit">Send</button>
+
+    </form>
+</section>
+
+
+<footer>
+    <p>© 2026 Aarohi. All rights reserved.</p>
+    <p>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </p>
+</footer>
+
+</body>
+</html>
